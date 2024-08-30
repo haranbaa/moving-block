@@ -1,0 +1,189 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #222;
+    color: #999;
+    font: 400 16px/1.5 'Exo', 'Ubuntu', 'Segoe UI', Helvetica, Arial, sans-serif;
+    text-align: center;
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAIAAACRXR/mAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAABnSURBVHja7M5RDYAwDEXRDgmvEocnlrQS2SwUFST9uEfBGWs9c97nbGtDcquqiKhOImLs/UpuzVzWEi1atGjRokWLFi1atGjRokWLFi1atGjRokWLFi1af7Ukz8xWp8z8AAAA//8DAJ4LoEAAlL1nAAAAAElFTkSuQmCC") repeat 0 0;
+  
+    -webkit-animation: bg-scrolling-reverse .92s infinite linear; /* Safari 4+ */
+    -moz-animation: bg-scrolling-reverse .92s infinite linear; /* Fx 5+ */
+    -o-animation: bg-scrolling-reverse .92s infinite linear; /* Opera 12+ */
+    animation: bg-scrolling-reverse .92s infinite linear; /* IE 10+ */
+}
+
+.block {
+    position: relative;
+    width: 820px;
+    height: 620px;
+    padding: 10px;
+    background: linear-gradient(45deg, #ff0000, #00ff00, #0000ff, #ff00ff);
+    background-size: 400% 400%;
+    animation: animate-border 10s linear infinite;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#game-container {
+    width: 800px;
+    height: 600px;
+    background-color: #ffffff5e;
+    display: grid;
+    grid-template-rows: repeat(50, 20px); 
+    grid-template-columns: repeat(40, 20px);
+    background-image: linear-gradient(to right, #dddddd60 1px, transparent 1px),
+                      linear-gradient(to bottom, #dddddd36 1px, transparent 1px);
+    background-size: 20px 20px;
+    z-index: 1;
+}
+
+#player {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-image: url('img/forg.png');
+    background-size: cover; /* Ensures the image covers the entire player area */
+    background-position: center; /* Centers the image within the player div */
+}
+
+.enemy {
+    position: absolute;
+    width: 25px;
+    height: 35px;
+    background-size: cover;
+}
+
+#enemy1 {
+    background-image: url('img/fire.png');
+}
+
+#enemy2 {
+    background-image: url('img/fire.png');
+}
+
+#enemy3 {
+    background-image: url('img/fire.png');
+}
+
+#enemy4 {
+    background-image: url('img/fire.png');
+}
+
+#timer {
+    position: absolute;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    z-index: 10;
+    top: 10px;
+    left: 10px;
+}
+
+.hearts {
+    position: absolute;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    top: 10px;
+    right: 10px;
+    z-index: 10;
+}
+
+.hearts span {
+    margin-right: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    color: #fff;
+}
+
+/* Adjust the width and height of each heart individually */
+#heart1 {
+    width: 40px;
+    height: 40px;
+    margin-left: 5px;
+}
+
+#heart2 {
+    width: 40px;
+    height: 40px;
+    margin-left: 5px;
+}
+
+#heart3 {
+    width: 40px;
+    height: 40px;
+    margin-left: 5px;
+}
+
+
+
+.life-lost {
+    animation: lifeLostAnimation 0.5s ease;
+}
+
+@keyframes lifeLostAnimation {
+    0% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes animate-border {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@-webkit-keyframes bg-scrolling-reverse {
+    100% { background-position: 50px 50px; }
+}
+@-moz-keyframes bg-scrolling-reverse {
+    100% { background-position: 50px 50px; }
+}
+@-o-keyframes bg-scrolling-reverse {
+    100% { background-position: 50px 50px; }
+}
+@keyframes bg-scrolling-reverse {
+    100% { background-position: 50px 50px; }
+}
+
+@-webkit-keyframes bg-scrolling {
+    0% { background-position: 50px 50px; }
+}
+@-moz-keyframes bg-scrolling {
+    0% { background-position: 50px 50px; }
+}
+@-o-keyframes bg-scrolling {
+    0% { background-position: 50px 50px; }
+}
+@keyframes bg-scrolling {
+    0% { background-position: 50px 50px; }
+}
